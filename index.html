@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+
+    <div id="pantalla">
+
+        <div id="fase1">
+            <img src="./img/Ciudadanos_RadiadorSprings.png" alt="">
+            <button onclick='organizer("2")' id="init_1">PLAY</button>
+        </div>
+        <div id="fase2" style="display:none">
+            <div class="row row_titulo">
+                <div class="col col_tiulo">
+                    <h1>ELEGIR COCHES</h1>
+                </div>
+            </div>
+            <div class="row row_fila1">
+                <div class="col col_fila1">
+                    <div class="info_coche">
+                        <img onclick='elegir("c1")' class="img_coche" id="c1" src="./img/mate.png" alt="">
+                        <p class="nombre"><strong>Nombre: </strong>Mate</p>
+                        <p class="modelo"><strong>Modelo: </strong>International L170</p>
+                    </div>
+                    <div class="info_coche">
+                        <img onclick='elegir("c2")' class="img_coche" id="c2" src="./img/rayo.png" alt="">
+                        <p class="nombre"><strong>Nombre: </strong>Rayo</p>
+                        <p class="modelo"><strong>Modelo: </strong>Chevrolet Corvete C1 2006</p>
+                    </div>
+                    <div class="info_coche">
+                        <img onclick='elegir("c3")' class="img_coche" id="c3" src="./img/rojo.png" alt="">
+                        <p class="nombre"><strong>Nombre: </strong>Rojo</p>
+                        <p class="modelo"><strong>Modelo: </strong>Marauder</p>
+                    </div>
+                    <div class="info_coche">
+                        <img onclick='elegir("c4")' class="img_coche" id="c4" src="./img/sally.png" alt="">
+                        <p class="nombre"><strong>Nombre: </strong>Sally</p>
+                        <p class="modelo"><strong>Modelo: </strong>Porsche 911 Serie 996</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row row_fila2">
+                <div class="col col_fila2">
+                    <div class="info_coche">
+                        <img onclick='elegir("c5")' class="img_coche" id="c5" src="./img/sargento.png" alt="">
+                        <p class="nombre"><strong>Nombre: </strong>Sargento</p>
+                        <p class="modelo"><strong>Modelo: </strong>Jeep</p>
+                    </div>
+                    <div class="info_coche">
+                        <img onclick='elegir("c6")' class="img_coche" id="c6" src="./img/sheriff.png" alt="">
+                        <p class="nombre"><strong>Nombre: </strong>Sheriff</p>
+                        <p class="modelo"><strong>Modelo: </strong>Mercury Eight Police Cruiser</p>
+                    </div>
+                    <div class="info_coche">
+                        <img onclick='elegir("c7")' class="img_coche" id="c7" src="./img/fio.png" alt="">
+                        <p class="nombre"><strong>Nombre: </strong>Flo</p>
+                        <p class="modelo"><strong>Modelo: </strong>GM Motorama</p>
+                    </div>
+                    <div class="info_coche">
+                        <img onclick='elegir("c8")' class="img_coche" id="c8" src="./img/fillmore.png" alt="">
+                        <p class="nombre"><strong>Nombre: </strong>Fillmore</p>
+                        <p class="modelo"><strong>Modelo: </strong>Volkswagen Combi T1</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row row_play">
+                <div class="col col_play">
+                    <button onclick='organizer("3"); mostrar_jugadores();' id="init_1">INICIAR JUEGO</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="fase3" style="display:none">
+            <!-- <div class="row row_participantes">
+                <div class="col-12 col_participantes">
+                    <h1>LOS PARTICIPANTES</h1>
+                </div>
+            </div>
+            <div class="row row_participantes_img">
+                <div class="col col_participantes_img">
+                    <div class="info_coche">
+                        <img onclick='elegir("c5")' class="img_corredor" id="c5" src="./img/sargento.png" alt="">
+                        <p class="nombre"><strong>Nombre: </strong>Sargento</p>
+                        <p class="modelo"><strong>Modelo: </strong>Jeep</p>
+                    </div>
+                    <div class="info_coche">
+                        <img onclick='elegir("c6")' class="img_corredor" id="c6" src="./img/sheriff.png" alt="">
+                        <p class="nombre"><strong>Nombre: </strong>Sheriff</p>
+                        <p class="modelo"><strong>Modelo: </strong>Mercury Eight Police Cruiser</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row row_participantes_img">
+                <div class="col col_participantes_img">
+                    <div class="info_coche">
+                        <img onclick='elegir("c7")' class="img_corredor" id="c7" src="./img/fio.png" alt="">
+                        <p class="nombre"><strong>Nombre: </strong>Flo</p>
+                        <p class="modelo"><strong>Modelo: </strong>GM Motorama</p>
+                    </div>
+                    <div class="info_coche">
+                        <img onclick='elegir("c8")' class="img_corredor" id="c8" src="./img/fillmore.png" alt="">
+                        <p class="nombre"><strong>Nombre: </strong>Fillmore</p>
+                        <p class="modelo"><strong>Modelo: </strong>Volkswagen Combi T1</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row row_play">
+                <div class="col col_play">
+                    <button onclick='organizer("4"); result();' id="init_2">INICIAR CARRERA</button>
+                </div>
+            </div> -->
+        </div>
+        <div id="fase4" style="display:none">
+
+            <div class="row row_titulo_carrera">
+                <div class="col-12 col_km">
+                    <h1>EMPIEZA LA CARRERA</h1>
+                </div>
+            </div>
+            <div id="info_coches" class="row row_result">
+                <!-- <div class="col-3 col_km">
+                    <h2>coch1</h2>
+                    <p>10 km recorridos</p>
+                </div>
+                <div class="col-3 col_km">
+                    <h2>coch2</h2>
+                    <p>13 km recorridos</p>
+                </div>
+                <div class="col-3 col_km">
+                    <h2>coch3</h2>
+                    <p>10 km recorridos</p>
+                </div>
+                <div class="col-3 col_km">
+                    <h2>coch4</h2>
+                    <p>13 km recorridos</p>
+                </div> -->
+            </div>
+            <div id="img_coches" class="row row_coches">
+                <!-- <div class="col-12 col_coches">
+                    <img src="./img/fillmore.png" class="img_carrera" alt="">
+                    <img src="./img/fio.png" class="img_carrera" alt="">
+                    <img src="./img/mate.png" class="img_carrera" alt="">
+                    <img src="./img/sargento.png" class="img_carrera" alt="">
+                </div> -->
+            </div>
+            <div class="row row_carrera">
+                <div id="pista" class="col-12 col_carrera">
+                </div>
+            </div>
+            <div class="row row_play">
+                <div class="col-12 col_end">
+                    <button onclick='organizer("5"); limpia_coches();' id="init_2">VER RESULTADO</button>
+                </div>
+            </div>
+
+        </div>
+        <div id="fase5" style="display:none">
+            <div class="row row_ganadores">
+                <div class="col col_ganadores">
+                    <h1 id="ganador">COCHE GANADOR</h1>
+                </div>
+            </div>
+            <div class="row row_img_ganador">
+                <div class="col col_ganadores">
+                    <img src="./img/banderras.jpg" class="img_banderas" alt="">
+                    <img id="img_ganador" src="" class="img_ganador" alt="">
+                    <img src="./img/banderras.jpg" class="img_banderas" alt="">
+                </div>
+            </div>
+            <div class="row row_play">
+                <div class="col col_end">
+                    <button id="init_3" onclick='organizer("1")'>VOLVER A JUGAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/coche.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+
+</html>
