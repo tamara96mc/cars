@@ -21,7 +21,7 @@
 
 /* Estilos de la 1º pantalla */
 
-#fase1{
+#fase1, .f1{
 
     width: 90%;
     height: 90%;
@@ -40,7 +40,7 @@
     height: 100%;
 }
 
-#fase1 > button {
+#fase1 > button, .btn_1 {
     position: absolute;
     top: 80%;
     width: 10em;
@@ -49,23 +49,14 @@
     background-color: rgb(116, 6, 6);
     border: 1px solid black;
     border-radius: 1em;
-    font-size : 1.25em;
+    font-size : 1em
 }
 
 #fase1 > button:hover {
     background-color: rgb(141, 24, 24);
   }
 
-#fase1 > button {
-    position: absolute;
-    top: 80%;
-    width: 10em;
-    height: 4em;
-    color: rgb(255, 255, 255);
-    background-color: rgb(116, 6, 6);
-    border: 1px solid black;
-    border-radius: 1em;
-}
+
 
 /* Estilos de la 2º pantalla */
 

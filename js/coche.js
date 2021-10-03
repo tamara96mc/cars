@@ -1,4 +1,4 @@
-////////////////class car//////////////////////////////////////////////////////
+// Clase coche
 
 class Coche {
     constructor(nombre, modelo, imagen) {
@@ -14,7 +14,8 @@ class Coche {
     }
 }
 
-//////////////declaration variables//////////////////////////////////////////////
+// Coches instanciados
+
 let p1 = new Coche('Mate', 'International L170', 'mate.png');
 let p2 = new Coche('Rayo', 'Chevrolet Corvete C1 2006', 'rayo.png');
 let p3 = new Coche('Rojo', 'Marauder', 'rojo.png');
@@ -24,7 +25,9 @@ let p6 = new Coche('Sheriff', 'Mercury Eight Police Cruiser', 'sheriff.png');
 let p7 = new Coche('Flo', 'GM Motorama', 'fio.png');
 let p8 = new Coche('Fillmore', 'Volkswagen Combi T1', 'fillmore.png');
 
-///////////traductor/////////////////////////////////////////////////////////////
+
+// Traductor de texto a objeto
+
 let traductorCoches = {
     "c1": p1,
     "c2": p2,
@@ -38,6 +41,7 @@ let traductorCoches = {
 
 let jugadores = [];
 
+//Elegir coches para la carrera
 
 const elegir = (cocheElegido) => {
 
@@ -62,6 +66,7 @@ const elegir = (cocheElegido) => {
 
 }
 
+//Mostrar los jugadores de la carrera que van a competir
 
 const mostrar_jugadores = () => {
 
@@ -108,6 +113,7 @@ const mostrar_jugadores = () => {
     `;
 }
 
+//Mostrar info de la partida
 
 mostrar_partida = () => {
 
@@ -143,8 +149,7 @@ mostrar_partida = () => {
 
 }
 
-
-//////////////////////////// CARRERA //////////////////////////////////////
+//Cambio los elementos de sitios cuando corren los coches
 
 const inicial_carrera = () => {
 
@@ -251,6 +256,7 @@ const inicial_carrera = () => {
     document.body.appendChild(j4)
 }
 
+//Quita los elementos de los coches
 
 const limpia_coches = () => {
 
@@ -260,6 +266,8 @@ const limpia_coches = () => {
     document.getElementById("p4").style.display = "none";
 
 }
+
+//Limpia los datos de la partida
 
 const limpia_partida = () => {
 
@@ -274,6 +282,7 @@ const limpia_partida = () => {
     document.getElementById("c7").className = "img_coche";
     document.getElementById("c8").className = "img_coche";
 
-
+    document.getElementById("init_1").className = "btn_1";
+    document.getElementById("fase1").className = "f1";
 
 }
