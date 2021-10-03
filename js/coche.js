@@ -36,40 +36,121 @@ let traductorCoches = {
     "c8": p8,
 }
 
-let jugador_1 = "";
-let jugador_2 = "";
-let jugador_3 = "";
-let jugador_4 = "";
+let jugadores = [];
+
 
 const elegir = (cocheElegido) => {
 
-    if (jugador_1 == "" || jugador_2 == "" || jugador_3 == "" || jugador_4 == "") {
+
+    if (jugadores[0] == null || jugadores[1] == null || jugadores[2] ==null || jugadores[3] == null) {
         document.getElementById(cocheElegido).className = "dark";
     }
 
-    if (jugador_1 == "") {
-        jugador_1 = traductorCoches[cocheElegido];
+    if (jugadores[0] == null) {
+        jugadores[0] = traductorCoches[cocheElegido];
 
-    } else if (jugador_1 != "" && jugador_2 == "") {
-        jugador_2 = traductorCoches[cocheElegido];
+    } else if (jugadores[0] != null && jugadores[1] == null) {
+        jugadores[1] = traductorCoches[cocheElegido];
 
-    } else if (jugador_1 != "" && jugador_2 != "" && jugador_3 == "") {
-        jugador_3 = traductorCoches[cocheElegido];
+    } else if (jugadores[0] != null && jugadores[1] != null && jugadores[2] == null) {
+        jugadores[2] = traductorCoches[cocheElegido];
 
-    } else if (jugador_1 != "" && jugador_2 != "" && jugador_3 != "" && jugador_4 == "") {
-        jugador_4 = traductorCoches[cocheElegido];
+    } else if (jugadores[0] != null && jugadores[1] != null && jugadores[2] != null && jugadores[3] == null) {
+        jugadores[3] = traductorCoches[cocheElegido];
 
     }
 
 }
 
+
+const mostrar_jugadores = () => {
+
+    let f3 = document.getElementById("fase3");
+    f3.innerHTML = `
+    <div class="row row_participantes">
+    <div class="col-12 col_participantes">
+        <h1>LOS PARTICIPANTES</h1>
+    </div>
+</div>
+<div class="row row_participantes_img">
+    <div class="col col_participantes_img">
+        <div class="info_coche">
+            <img onclick='elegir("c5")' class="img_corredor" id="c5" src="./img/${jugadores[0].imagen}" alt="">
+            <p class="nombre"><strong>Nombre: </strong>${jugadores[0].nombre}</p>
+            <p class="modelo"><strong>Modelo: </strong>${jugadores[0].modelo}</p>
+        </div>
+        <div class="info_coche">
+            <img onclick='elegir("c6")' class="img_corredor" id="c6" src="./img/${jugadores[1].imagen}" alt="">
+            <p class="nombre"><strong>Nombre: </strong>${jugadores[1].nombre}</p>
+            <p class="modelo"><strong>Modelo: </strong>${jugadores[1].modelo}</p>
+        </div>
+    </div>
+</div>
+<div class="row row_participantes_img">
+    <div class="col col_participantes_img">
+        <div class="info_coche">
+            <img onclick='elegir("c7")' class="img_corredor" id="c7" src="./img/${jugadores[2].imagen}" alt="">
+            <p class="nombre"><strong>Nombre: </strong>${jugadores[2].nombre}</p>
+            <p class="modelo"><strong>Modelo: </strong>${jugadores[2].modelo}</p>
+        </div>
+        <div class="info_coche">
+            <img onclick='elegir("c8")' class="img_corredor" id="c8" src="./img/${jugadores[3].imagen}" alt="">
+            <p class="nombre"><strong>Nombre: </strong>${jugadores[3].nombre}</p>
+            <p class="modelo"><strong>Modelo: </strong>${jugadores[3].modelo}</p>
+        </div>
+    </div>
+</div>
+<div class="row row_play">
+    <div class="col col_run">
+        <button onclick='organizer("4"); inicial_carrera();' id="init_2">INICIAR CARRERA</button>
+    </div>
+</div>
+    `;
+}
+
+
+mostrar_partida = () => {
+
+    let info_coches = document.getElementById("info_coches");
+    info_coches.innerHTML = `
+    <div class="col-3 col_km">
+        <h2>${jugadores[0].nombre}</h2>
+        <p>10 km recorridos</p>
+    </div>
+    <div class="col-3 col_km">
+        <h2>${jugadores[1].nombre}</h2>
+        <p>13 km recorridos</p>
+    </div>
+    <div class="col-3 col_km">
+        <h2>${jugadores[2].nombre}</h2>
+        <p>10 km recorridos</p>
+    </div>
+    <div class="col-3 col_km">
+        <h2>${jugadores[3].nombre}</h2>
+        <p>13 km recorridos</p>
+    </div>
+    `;
+
+    let img_coches = document.getElementById("img_coches");
+    img_coches.innerHTML = `
+    <div class="col-12 col_coches">
+            <img src="./img/${jugadores[0].imagen}" class="img_carrera" alt="">
+            <img src="./img/${jugadores[1].imagen}" class="img_carrera" alt="">
+            <img src="./img/${jugadores[2].imagen}" class="img_carrera" alt="">
+            <img src="./img/${jugadores[3].imagen}" class="img_carrera" alt="">
+    </div>
+    `;
+
+}
+
+
 //////////////////////////// CARRERA //////////////////////////////////////
 
-const result = () => {
+const inicial_carrera = () => {
 
-    mostrar_partida()
- 
-    const distancia_KM = parseInt(document.getElementById("pista").offsetWidth) - 110;
+    mostrar_partida();
+
+    const distancia_KM = parseInt(document.getElementById("pista").offsetWidth) - 175;
 
     const j1 = document.createElement('div')
     const j2 = document.createElement('div')
@@ -82,7 +163,7 @@ const result = () => {
         top: 350px;
         left: 300px;
         clip-path: polygon(55% 10%, 69% 36%, 100% 44%, 100% 70%, 77% 87%, 52% 69%, 26% 87%, 0% 70%, 0 45%, 23% 10%);
-        background-color: black;
+        background-color: rgb(255, 217, 5);;
         width: 4em;
         height: 2em;
     `
@@ -92,7 +173,7 @@ const result = () => {
         top: 415px;
         left: 300px;
         clip-path: polygon(55% 10%, 69% 36%, 100% 44%, 100% 70%, 77% 87%, 52% 69%, 26% 87%, 0% 70%, 0 45%, 23% 10%);
-        background-color: black;
+        background-color: rgb(9, 238, 1);
         width: 4em;
         height: 2em;
     `
@@ -102,7 +183,7 @@ const result = () => {
         top: 485px;
         left: 300px;
         clip-path: polygon(55% 10%, 69% 36%, 100% 44%, 100% 70%, 77% 87%, 52% 69%, 26% 87%, 0% 70%, 0 45%, 23% 10%);
-        background-color: black;
+        background-color: rgb(10, 14, 245);
         width: 4em;
         height: 2em;
     `
@@ -112,7 +193,7 @@ const result = () => {
         top: 550px;
         left: 300px;
         clip-path: polygon(55% 10%, 69% 36%, 100% 44%, 100% 70%, 77% 87%, 52% 69%, 26% 87%, 0% 70%, 0 45%, 23% 10%);
-        background-color: black;
+        background-color: rgb(245, 10, 100);
         width: 4em;
         height: 2em;
     `
@@ -120,48 +201,45 @@ const result = () => {
     let titulo_ganador = document.getElementById("ganador");
     let img_ganador = document.getElementById("img_ganador");
 
-    console.log('empieza la carrera');
 
     document.body.addEventListener('keydown', function (event) {
 
-        console.log('corre');
+        if (jugadores[0].km_recorridos < distancia_KM && jugadores[1].km_recorridos < distancia_KM && jugadores[2].km_recorridos < distancia_KM && jugadores[3].km_recorridos < distancia_KM) {
 
-        if (jugador_1.km_recorridos < distancia_KM && jugador_2.km_recorridos < distancia_KM && jugador_3.km_recorridos < distancia_KM && jugador_4.km_recorridos < distancia_KM) {
-
-            if (event.keyCode === 87) {
+            if (event.keyCode === 32) {
 
                 const corredor1 = j1.style.left.replace('px', '')
-                j1.style.left = `${+corredor1 + jugador_1.velocidad}px`
-                jugador_1.correr()
+                j1.style.left = `${+corredor1 + jugadores[0].velocidad}px`
+                jugadores[0].correr()
 
                 const corredor2 = j2.style.left.replace('px', '')
-                j2.style.left = `${+corredor2 + jugador_2.velocidad}px`
-                jugador_2.correr()
+                j2.style.left = `${+corredor2 + jugadores[1].velocidad}px`
+                jugadores[1].correr()
 
                 const corredor3 = j3.style.left.replace('px', '')
-                j3.style.left = `${+corredor3 + jugador_3.velocidad}px`
-                jugador_3.correr()
+                j3.style.left = `${+corredor3 + jugadores[2].velocidad}px`
+                jugadores[2].correr()
 
                 const corredor4 = j4.style.left.replace('px', '')
-                j4.style.left = `${+corredor4 + jugador_4.velocidad}px`
-                jugador_4.correr()
+                j4.style.left = `${+corredor4 + jugadores[3].velocidad}px`
+                jugadores[3].correr()
 
 
-                if (jugador_1.km_recorridos >= distancia_KM) {
-                    titulo_ganador.innerHTML = jugador_1.nombre + ' ha ganado la carrera!';
-                    img_ganador.src=`./img/${jugador_1.imagen}`;
+                if (jugadores[0].km_recorridos >= distancia_KM) {
+                    titulo_ganador.innerHTML = jugadores[0].nombre + ' ha ganado la carrera!';
+                    img_ganador.src = `./img/${jugadores[0].imagen}`;
 
-                } else if (jugador_2.km_recorridos >= distancia_KM) {
-                    titulo_ganador.innerHTML = jugador_2.nombre + ' ha ganado la carrera!';
-                    img_ganador.src=`./img/${jugador_2.imagen}`;
+                } else if (jugadores[1].km_recorridos >= distancia_KM) {
+                    titulo_ganador.innerHTML = jugadores[1].nombre + ' ha ganado la carrera!';
+                    img_ganador.src = `./img/${jugadores[1].imagen}`;
 
-                } else if (jugador_3.km_recorridos >= distancia_KM) {
-                    titulo_ganador.innerHTML = jugador_3.nombre + ' ha ganado la carrera!';
-                    img_ganador.src=`./img/${jugador_3.imagen}`;
+                } else if (jugadores[2].km_recorridos >= distancia_KM) {
+                    titulo_ganador.innerHTML = jugadores[2].nombre + ' ha ganado la carrera!';
+                    img_ganador.src = `./img/${jugadores[2].imagen}`;
 
-                } else if (jugador_4.km_recorridos >= distancia_KM) {
-                    titulo_ganador.innerHTML = jugador_4.nombre + ' ha ganado la carrera!';
-                    img_ganador.src=`./img/${jugador_4.imagen}`;
+                } else if (jugadores[3].km_recorridos >= distancia_KM) {
+                    titulo_ganador.innerHTML = jugadores[3].nombre + ' ha ganado la carrera!';
+                    img_ganador.src = `./img/${jugadores[3].imagen}`;
                 }
             }
         }
@@ -183,83 +261,19 @@ const limpia_coches = () => {
 
 }
 
-
-const mostrar_jugadores = () => {
-
-    let f3 = document.getElementById("fase3");
-    f3.innerHTML = `
-    <div class="row row_participantes">
-    <div class="col-12 col_participantes">
-        <h1>LOS PARTICIPANTES</h1>
-    </div>
-</div>
-<div class="row row_participantes_img">
-    <div class="col col_participantes_img">
-        <div class="info_coche">
-            <img onclick='elegir("c5")' class="img_corredor" id="c5" src="./img/${jugador_1.imagen}" alt="">
-            <p class="nombre"><strong>Nombre: </strong>${jugador_1.nombre}</p>
-            <p class="modelo"><strong>Modelo: </strong>${jugador_1.modelo}</p>
-        </div>
-        <div class="info_coche">
-            <img onclick='elegir("c6")' class="img_corredor" id="c6" src="./img/${jugador_2.imagen}" alt="">
-            <p class="nombre"><strong>Nombre: </strong>${jugador_2.nombre}</p>
-            <p class="modelo"><strong>Modelo: </strong>${jugador_2.modelo}</p>
-        </div>
-    </div>
-</div>
-<div class="row row_participantes_img">
-    <div class="col col_participantes_img">
-        <div class="info_coche">
-            <img onclick='elegir("c7")' class="img_corredor" id="c7" src="./img/${jugador_3.imagen}" alt="">
-            <p class="nombre"><strong>Nombre: </strong>${jugador_3.nombre}</p>
-            <p class="modelo"><strong>Modelo: </strong>${jugador_3.modelo}</p>
-        </div>
-        <div class="info_coche">
-            <img onclick='elegir("c8")' class="img_corredor" id="c8" src="./img/${jugador_4.imagen}" alt="">
-            <p class="nombre"><strong>Nombre: </strong>${jugador_4.nombre}</p>
-            <p class="modelo"><strong>Modelo: </strong>${jugador_4.modelo}</p>
-        </div>
-    </div>
-</div>
-<div class="row row_play">
-    <div class="col col_run">
-        <button onclick='organizer("4"); result();' id="init_2">INICIAR CARRERA</button>
-    </div>
-</div>
-    `;
-}
+const limpia_partida = () => {
 
 
-mostrar_partida = () =>{
+    jugadores = [];
+    document.getElementById("c1").className = "img_coche";
+    document.getElementById("c2").className = "img_coche";
+    document.getElementById("c3").className = "img_coche";
+    document.getElementById("c4").className = "img_coche";
+    document.getElementById("c5").className = "img_coche";
+    document.getElementById("c6").className = "img_coche";
+    document.getElementById("c7").className = "img_coche";
+    document.getElementById("c8").className = "img_coche";
 
-    let info_coches = document.getElementById("info_coches");
-    info_coches.innerHTML = `
-    <div class="col-3 col_km">
-        <h2>${jugador_1.nombre}</h2>
-        <p>10 km recorridos</p>
-    </div>
-    <div class="col-3 col_km">
-        <h2>${jugador_2.nombre}</h2>
-        <p>13 km recorridos</p>
-    </div>
-    <div class="col-3 col_km">
-        <h2>${jugador_3.nombre}</h2>
-        <p>10 km recorridos</p>
-    </div>
-    <div class="col-3 col_km">
-        <h2>${jugador_4.nombre}</h2>
-        <p>13 km recorridos</p>
-    </div>
-    `;
 
-    let img_coches = document.getElementById("img_coches");
-    img_coches.innerHTML = `
-    <div class="col-12 col_coches">
-            <img src="./img/${jugador_1.imagen}" class="img_carrera" alt="">
-            <img src="./img/${jugador_2.imagen}" class="img_carrera" alt="">
-            <img src="./img/${jugador_3.imagen}" class="img_carrera" alt="">
-            <img src="./img/${jugador_4.imagen}" class="img_carrera" alt="">
-    </div>
-    `;
 
 }
