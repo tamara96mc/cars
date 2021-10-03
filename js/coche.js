@@ -115,19 +115,19 @@ mostrar_partida = () => {
     info_coches.innerHTML = `
     <div class="col-3 col_km">
         <h2>${jugadores[0].nombre}</h2>
-        <p>10 km recorridos</p>
+        <p>${jugadores[0].modelo}</p>
     </div>
     <div class="col-3 col_km">
         <h2>${jugadores[1].nombre}</h2>
-        <p>13 km recorridos</p>
+        <p>${jugadores[1].modelo}</p>
     </div>
     <div class="col-3 col_km">
         <h2>${jugadores[2].nombre}</h2>
-        <p>10 km recorridos</p>
+        <p>${jugadores[2].modelo}</p>
     </div>
     <div class="col-3 col_km">
         <h2>${jugadores[3].nombre}</h2>
-        <p>13 km recorridos</p>
+        <p>${jugadores[3].modelo}</p>
     </div>
     `;
 
