@@ -136,6 +136,22 @@
     width: 40%;
     height: 100%;
     margin-bottom: 1em;
+
+}
+
+.car_dark{
+   
+    background-color: rgb(255, 255, 255);
+    width: 70%;
+    height: 12em;
+    margin: 1em;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 0.35em solid rgb(252, 227, 3);
+    border-radius: 0.5em;
 }
 
 #init_1{
@@ -237,6 +253,11 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-start;
+    background-color: #ffffff;
+    opacity: 0.8;
+    background-image:  repeating-linear-gradient(45deg, #a0a0a8 25%, transparent 25%, transparent 75%, #a0a0a8 75%, #a0a0a8), repeating-linear-gradient(45deg, #a0a0a8 25%, #ffffff 25%, #ffffff 75%, #a0a0a8 75%, #a0a0a8);
+    background-position: 0 0, 10px 10px;
+    background-size: 20px 20px;
 }
 
 .row_titulo_carrera{
@@ -254,13 +275,13 @@
 }
 .row_coches{
     width: 100%;
-    height: 35%;
+    height: 25%;
     background-color: rgb(255, 255, 255);
 }
 
 .row_carrera{
     width: 100%;
-    height: 30%;
+    height: 40%;
     background-color: rgb(255, 255, 255);
 }
 
@@ -274,7 +295,7 @@
 
 .img_carrera{
     width: 20%;
-    height: 50%;
+    height: 70%;
     margin: 1em;
 }
 .coche{
@@ -285,6 +306,52 @@
     height: 2em;
 }
 
+.p1{
+
+    position: fixed;
+    top: 360px;
+    left: 300px;
+    clip-path: polygon(55% 10%, 69% 36%, 100% 44%, 100% 70%, 77% 87%, 52% 69%, 26% 87%, 0% 70%, 0 45%, 23% 10%);
+    background-color: rgb(255, 217, 5);;
+    width: 4em;
+    height: 2em;
+}
+
+.p2{
+
+    position: fixed;
+    top: 425px;
+    left: 300px;
+    clip-path: polygon(55% 10%, 69% 36%, 100% 44%, 100% 70%, 77% 87%, 52% 69%, 26% 87%, 0% 70%, 0 45%, 23% 10%);
+    background-color: rgb(9, 238, 1);
+    width: 4em;
+    height: 2em;
+
+}
+
+.p3{
+
+    position: fixed;
+    top: 495px;
+    left: 300px;
+    clip-path: polygon(55% 10%, 69% 36%, 100% 44%, 100% 70%, 77% 87%, 52% 69%, 26% 87%, 0% 70%, 0 45%, 23% 10%);
+    background-color: rgb(10, 14, 245);
+    width: 4em;
+    height: 2em;
+
+}
+
+.p4{
+
+    position: fixed;
+    top: 560px;
+    left: 300px;
+    clip-path: polygon(55% 10%, 69% 36%, 100% 44%, 100% 70%, 77% 87%, 52% 69%, 26% 87%, 0% 70%, 0 45%, 23% 10%);
+    background-color: rgb(245, 10, 100);
+    width: 4em;
+    height: 2em;
+
+}
 /* Estilos de la 5º pantalla */
 
 #fase5{

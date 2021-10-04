@@ -10,10 +10,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-        crossorigin="anonymous"></script>
-
+    
     <link rel="stylesheet" href="./css/styles.css">
 </head>
 
@@ -30,28 +27,28 @@
         <div id="fase2" style="display:none">
             <div class="row row_titulo">
                 <div class="col col_tiulo">
-                    <h1>ELEGIR COCHES</h1>
+                    <h1><strong>ELEGIR 4 COCHES</strong></h1>
                 </div>
             </div>
             <div class="row row_fila1">
                 <div class="col col_fila1">
-                    <div class="info_coche">
-                        <img onclick='elegir("c1")' class="img_coche" id="c1" src="./img/mate.png" alt="">
+                    <div class="info_coche" id="car_c1" onclick='elegir("c1")'>
+                        <img class="img_coche" id="c1" src="./img/mate.png" alt="">
                         <p class="nombre"><strong>Nombre: </strong>Mate</p>
                         <p class="modelo"><strong>Modelo: </strong>International L170</p>
                     </div>
-                    <div class="info_coche">
-                        <img onclick='elegir("c2")' class="img_coche" id="c2" src="./img/rayo.png" alt="">
+                    <div class="info_coche" id="car_c2" onclick='elegir("c2")'>
+                        <img class="img_coche" id="c2" src="./img/rayo.png" alt="">
                         <p class="nombre"><strong>Nombre: </strong>Rayo</p>
                         <p class="modelo"><strong>Modelo: </strong>Chevrolet Corvete C1 2006</p>
                     </div>
-                    <div class="info_coche">
-                        <img onclick='elegir("c3")' class="img_coche" id="c3" src="./img/rojo.png" alt="">
+                    <div class="info_coche" id="car_c3" onclick='elegir("c3")'>
+                        <img class="img_coche" id="c3" src="./img/rojo.png" alt="">
                         <p class="nombre"><strong>Nombre: </strong>Rojo</p>
                         <p class="modelo"><strong>Modelo: </strong>Marauder</p>
                     </div>
-                    <div class="info_coche">
-                        <img onclick='elegir("c4")' class="img_coche" id="c4" src="./img/sally.png" alt="">
+                    <div class="info_coche" id="car_c4" onclick='elegir("c4")'>
+                        <img class="img_coche" id="c4" src="./img/sally.png" alt="">
                         <p class="nombre"><strong>Nombre: </strong>Sally</p>
                         <p class="modelo"><strong>Modelo: </strong>Porsche 911 Serie 996</p>
                     </div>
@@ -59,23 +56,23 @@
             </div>
             <div class="row row_fila2">
                 <div class="col col_fila2">
-                    <div class="info_coche">
-                        <img onclick='elegir("c5")' class="img_coche" id="c5" src="./img/sargento.png" alt="">
+                    <div class="info_coche" id="car_c5" onclick='elegir("c5")'>
+                        <img  class="img_coche" id="c5" src="./img/sargento.png" alt="">
                         <p class="nombre"><strong>Nombre: </strong>Sargento</p>
                         <p class="modelo"><strong>Modelo: </strong>Jeep</p>
                     </div>
-                    <div class="info_coche">
-                        <img onclick='elegir("c6")' class="img_coche" id="c6" src="./img/sheriff.png" alt="">
+                    <div class="info_coche" id="car_c6" onclick='elegir("c6")'>
+                        <img class="img_coche" id="c6" src="./img/sheriff.png" alt="">
                         <p class="nombre"><strong>Nombre: </strong>Sheriff</p>
                         <p class="modelo"><strong>Modelo: </strong>Mercury Eight Police Cruiser</p>
                     </div>
-                    <div class="info_coche">
-                        <img onclick='elegir("c7")' class="img_coche" id="c7" src="./img/fio.png" alt="">
+                    <div class="info_coche" id="car_c7"  onclick='elegir("c7")'>
+                        <img class="img_coche" id="c7" src="./img/fio.png" alt="">
                         <p class="nombre"><strong>Nombre: </strong>Flo</p>
                         <p class="modelo"><strong>Modelo: </strong>GM Motorama</p>
                     </div>
-                    <div class="info_coche">
-                        <img onclick='elegir("c8")' class="img_coche" id="c8" src="./img/fillmore.png" alt="">
+                    <div class="info_coche" id="car_c8" onclick='elegir("c8")'>
+                        <img class="img_coche" id="c8" src="./img/fillmore.png" alt="">
                         <p class="nombre"><strong>Nombre: </strong>Fillmore</p>
                         <p class="modelo"><strong>Modelo: </strong>Volkswagen Combi T1</p>
                     </div>
@@ -96,7 +93,7 @@
 
             <div class="row row_titulo_carrera">
                 <div class="col-12 col_km">
-                    <h1>EMPIEZA LA CARRERA</h1>
+                    <h1><strong>EMPIEZA LA CARRERA</strong></h1>
                 </div>
             </div>
             <div id="info_coches" class="row row_result">
@@ -118,7 +115,7 @@
         <div id="fase5" style="display:none">
             <div class="row row_ganadores">
                 <div class="col col_ganadores">
-                    <h1 id="ganador">COCHE GANADOR</h1>
+                    <h1 id="ganador"><strong>COCHE GANADOR</strong></h1>
                 </div>
             </div>
             <div class="row row_img_ganador">
@@ -138,6 +135,9 @@
 
     <script type="text/javascript" src="js/coche.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>
