@@ -51,10 +51,10 @@ const elegir = (cocheElegido) => {
 
 
     if (jugadores[0] == null || jugadores[1] == null || jugadores[2] ==null || jugadores[3] == null) {
-        document.getElementById(cocheElegido).className = "dark";
+        document.getElementById(cocheElegido).className = "sombra";
 
         let id_car= 'car_'+ cocheElegido;
-        document.getElementById(id_car).className = "car_dark";
+        document.getElementById(id_car).className = "car_sombra";
     }
 
     if (jugadores[0] == null) {

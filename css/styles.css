@@ -131,7 +131,7 @@
     margin-bottom: 1em;
 }
 
-.dark{
+.sombra{
     filter: grayscale(100%);
     width: 40%;
     height: 100%;
@@ -139,7 +139,7 @@
 
 }
 
-.car_dark{
+.car_sombra{
    
     background-color: rgb(255, 255, 255);
     width: 70%;
