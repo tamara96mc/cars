@@ -6,15 +6,15 @@ class Coche {
         this.modelo = modelo;
         this.imagen = imagen;
         this.velocidad = (Math.floor(Math.random() * 90 + 10));
-        this.km_recorridos = 0;
+        this.distancia_px = 0;
     }
 
     correr() {
-        this.km_recorridos += this.velocidad;
+        this.distancia_px += this.velocidad;
     }
 
     reset_km() {
-        this.km_recorridos=0;
+        this.distancia_px=0;
     }
 }
 
@@ -191,44 +191,40 @@ const inicial_carrera = () => {
     document.body.addEventListener('keydown', function (event) {
 
 
-        if (jugadores[0].km_recorridos < distancia_KM && jugadores[1].km_recorridos < distancia_KM && jugadores[2].km_recorridos < distancia_KM && jugadores[3].km_recorridos < distancia_KM) {
+        if (jugadores[0].distancia_px < distancia_KM && jugadores[1].distancia_px < distancia_KM && jugadores[2].distancia_px < distancia_KM && jugadores[3].distancia_px < distancia_KM) {
 
             if (event.keyCode === 32) {
 
                 corredor1 = ( (j1.style.left.replace('px', '')=='') ) ? 300 : j1.style.left.replace('px', ''); 
-                console.log('c1 ' + corredor1);
                 j1.style.left = `${+corredor1 + jugadores[0].velocidad}px`;
                 jugadores[0].correr();
 
                 corredor2 = ( (j2.style.left.replace('px', '')=='') ) ? 300 : j2.style.left.replace('px', ''); 
-                console.log('c2 ' + corredor2);
                 j2.style.left = `${+corredor2 + jugadores[1].velocidad}px`;
                 jugadores[1].correr();
 
                 corredor3 = ( (j3.style.left.replace('px', '')=='') ) ? 300 : j3.style.left.replace('px', ''); 
-                console.log('c3 ' + corredor3);
                 j3.style.left = `${+corredor3 + jugadores[2].velocidad}px`;
                 jugadores[2].correr();
 
                 corredor4 = ( (j4.style.left.replace('px', '')=='') ) ? 300 : j4.style.left.replace('px', ''); 
-                console.log('c4 ' + corredor4);
                 j4.style.left = `${+corredor4 + jugadores[3].velocidad}px`;
                 jugadores[3].correr();
 
 
-                if (jugadores[0].km_recorridos >= distancia_KM) {
+                if (jugadores[0].distancia_px >= distancia_KM) {
                     titulo_ganador.innerHTML = jugadores[0].nombre + ' ha ganado la carrera!';
                     img_ganador.src = `./img/${jugadores[0].imagen}`;
 
-                } else if (jugadores[1].km_recorridos >= distancia_KM) {
+                } else if (jugadores[1].distancia_px >= distancia_KM) {
                     titulo_ganador.innerHTML = jugadores[1].nombre + ' ha ganado la carrera!';
                     img_ganador.src = `./img/${jugadores[1].imagen}`;
 
-                } else if (jugadores[2].km_recorridos >= distancia_KM) {
+                } else if (jugadores[2].distancia_px >= distancia_KM) {
                     titulo_ganador.innerHTML = jugadores[2].nombre + ' ha ganado la carrera!';
                     img_ganador.src = `./img/${jugadores[2].imagen}`;
 
-                } else if (jugadores[3].km_recorridos >= distancia_KM) {
+                } else if (jugadores[3].distancia_px >= distancia_KM) {
                     titulo_ganador.innerHTML = jugadores[3].nombre + ' ha ganado la carrera!';
                     img_ganador.src = `./img/${jugadores[3].imagen}`;
                 }
